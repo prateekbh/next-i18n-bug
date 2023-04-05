@@ -121,3 +121,19 @@ export default function Home() {
     </>
   )
 }
+
+export async function getStaticProps({params, locale}: any) {
+  console.log({params, locale});
+  return {
+    props: {},
+    revalidate: 50
+  }
+}
+
+
+export async function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: 'blocking',
+  }
+}
